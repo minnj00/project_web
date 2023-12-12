@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+    {% for post in user.post_set.all %}
+        {% include '_card.html' %}
+    {% endfor %}
+
+{% endblock %}

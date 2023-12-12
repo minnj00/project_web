@@ -1,0 +1,6 @@
+<div class="card">
+    <img src="{{post.image.url}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <a href="{% url 'posts:post_detail' post_id=post.id %}">{{post.title}}</a>
+    </div>
+</div>

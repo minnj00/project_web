@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<div class="row mt-5">
+    <div class="col-12">
+        <div class="card" style="width: 100%;">
+            <div class="card-body">
+                <h5 class="card-title">{{post.title}}</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">{{post.serving}}인분 기준</li>
+                <li class="list-group-item">재료</li>
+                <li class="list-group-item">
+                {% for ingred in ingreds %}
+                    {{ingred.ingred}} {{ingred.amount}} <br>
+                {% endfor %}
+                </li>
+                <li class="list-group-item">레시피</li>
+                <li class="list-group-item">
+                {% for recipe in recipes %}
+                    {{recipe.step}}단계 {{recipe.contents}} <br>
+                {% endfor %}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <a href="/posts/" class="btn btn-primary">목록보기</a>
+    </div>
+</div>
+{% endblock %}
